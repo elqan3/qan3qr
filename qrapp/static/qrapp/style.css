@@ -1,0 +1,240 @@
+/* الخطوط الأساسية */
+body {
+    font-family: 'Poppins', sans-serif , 'cario';
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* الهيدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #1f1f1f, #2c2c2c);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo-primary { color: #ff6f61; }
+.logo-secondary { color: #4db6ac; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+    transform: scale(1.05);
+}
+
+/* القسم الترحيبي */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #1a1a1a, #222222);
+    border-bottom: 1px solid #333;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+.hero h1, .qr-generator h2, .result a, .btn-create {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #cfcfcf;
+}
+
+/* قسم إنشاء QR */
+.qr-generator {
+    background: #1e1e1e;
+    padding: 50px 30px;
+    margin: 50px auto;
+    border-radius: 20px;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.qr-generator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+}
+
+.qr-generator h2 {
+    margin-bottom: 25px;
+    color: #4db6ac;
+}
+
+/* الفورم */
+.qr-generator form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.qr-generator label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* حقول النص و الرقم */
+.qr-generator textarea, 
+.qr-generator input[type="text"],
+.qr-generator input[type="number"] {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.qr-generator input[type="number"] {
+    max-width: 100px;
+}
+
+/* حقول اللون */
+.qr-generator input[type="color"] {
+    width: 60px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* رفع الشعار */
+.qr-generator input[type="file"] {
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #555;
+    transition: all 0.3s;
+}
+
+.qr-generator input[type="file"]:hover {
+    border-color: #4db6ac;
+    transform: scale(1.02);
+}
+
+/* زر إنشاء */
+.btn-create {
+    background: #ff6f61;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-create:hover {
+    background: #4db6ac;
+    transform: scale(1.05);
+}
+
+/* النتيجة */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #2c2c2c;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.result img {
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.result a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.result a:hover {
+    color: #4db6ac;
+    transform: scale(1.05);
+}
+
+
+header, footer, .qr-generator, .result, label, input, textarea {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* الفوتر */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1f1f1f;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .qr-generator { margin: 20px; padding: 30px 20px; }
+    .result img { width: 150px; }
+}
+
+
+.rtl-text {
+    direction: rtl;
+    unicode-bidi: embed; /* يحافظ على ترتيب الكلمات */
+}
+
+.ltr-span {
+    direction: ltr;
+    display: inline-block;
+}
+

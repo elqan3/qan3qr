@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - Qantresso QR Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'qrapp/style.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <span class="logo-primary">Qan</span><span class="logo-secondary">tresso</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">الرئيسية</a></li>
+            <li><a href="{% url 'about' %}">من نحن</a></li>
+            <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Qantresso QR Studio من نحن في</h1>
+    <p dir="rtl">  في الحقيقة لا يوجد نحن لأني  انا عظيم القنطري هوا المؤسس للموقع واعمل عليه لوحدي كفكرة برمجية اولا لتساعد الناس في صناعة رموز QR  سريعة ,فعالة ,احترافية بسهولة ,وثانيا اعتقد انها فكرة برمجية دكية لوضعها في السيرة الداتية . <p>اتمنى ان الموقع اعجبك وافادك ,ارجو منك ان لا تنساني ووالداي من صالح الدعاء ,بالتوفيق.</p>
+        </p>
+</section>
+
+<section class="qr-generator">
+    <h2>قيمنا ورؤيتنا</h2>
+    <p class="rtl-text">
+        - الجودة والاحترافية في كل رمز QR يتم إنشاؤه.<br>
+        - واجهة سهلة وبسيطة تناسب جميع المستخدمين.<br>
+        -  المساعدة في إنشاء رمز QR قد يصنع تغيير في حياة شخص او يساعده في عمله او دراسته  .
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Qantresso. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>

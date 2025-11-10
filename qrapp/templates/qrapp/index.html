@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qantresso QR Studio</title>
+    <!-- خطوط Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'qrapp/style.css' %}">
+</head>
+<body>
+
+<!-- الهيدر -->
+<header>
+    <div class="logo">
+        <span class="logo-primary">Qan</span><span class="logo-secondary">tresso</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">الرئيسية</a></li>
+            <li><a href="{% url 'about' %}">من نحن</a></li>
+            <li><a href="{% url 'contact' %}">اتصل بنا</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- القسم الترحيبي -->
+<section class="hero">
+    <h1>أهلاً بك في Qantresso QR Studio</h1>
+    <p class="rtl-text">صمّم رمزك الخاص بسهولة واحترافية. ألوانك، شعارك، وحجمك — كل شيء بين يديك!</p>
+</section>
+
+<!-- قسم إنشاء QR -->
+<section class="qr-generator">
+    <h2>أنشئ رمز QR الخاص بك</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+         
+
+        <div class="form-group">
+            <label for="id_data">النص أو الرابط</label>
+            {{ form.data }}
+        </div>
+
+        <div class="form-group color-group">
+            <label for="id_fill_color">لون المربعات</label>
+            <input type="color" id="id_fill_color" name="fill_color" value="{{ form.fill_color.value|default:'#000000' }}">
+        </div>
+
+        <div class="form-group color-group">
+            <label for="id_back_color">لون الخلفية</label>
+            <input type="color" id="id_back_color" name="back_color" value="{{ form.back_color.value|default:'#ffffff' }}">
+        </div>
+
+        <div class="form-group">
+            <label for="id_box_size">حجم المربعات (1 - 40)</label>
+            {{ form.box_size }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_logo" class="logo-label">إضافة شعار (اختياري)</label>
+            {{ form.logo }}
+        </div>
+
+        <button type="submit" class="btn-create">إنشاء QR</button>
+    </form>
+
+    {% if qr_data_uri %}
+    <div class="result">
+        <h3>النتيجة:</h3>
+        <img src="{{ qr_data_uri }}" alt="QR Code">
+        <p><a href="{{ qr_data_uri }}" download="qantresso_qr.png" class="btn-download">تحميل الكود</a></p>
+    </div>
+    {% endif %}
+</section>
+
+<!-- الفوتر -->
+<footer>
+    <p>&copy; 2025 Qantresso. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>
