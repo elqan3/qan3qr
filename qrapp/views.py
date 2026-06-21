@@ -54,13 +54,13 @@ def home(request):
             qr_data_uri = f"data:image/png;base64,{img_b64}"
 
             # --- حفظ الرمز في قاعدة البيانات وزيادة العدادات ---
-            QRCode.objects.create(
-                data=data,
-                fill_color=fill,
-                back_color=back,
-                box_size=box,
-                logo=logo_file
-            )
+            #//QRCode.objects.create(
+                #data=data,
+                #fill_color=fill,
+                #back_color=back,
+                #box_size=box,
+                #logo=logo_file
+         #   )
 
     else:
         form = QRForm()
