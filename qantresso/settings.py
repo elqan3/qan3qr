@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l!*n#i+d8i3l9s+i*0ygcs^=clpo144!=p%siv$fdl4lyddkq4
 DEBUG = True
 
 ALLOWED_HOSTS = ['qantressoqr.onrender.com']
-
+ALLOWED_HOSTS = ['qan3qr.vercel.app']
 
 
 # Application definition
